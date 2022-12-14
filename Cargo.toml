@@ -1,0 +1,11 @@
+[package]
+name = "rust-atomics-and-locks"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.66.0"
+
+[dependencies]
+atomic-wait = "1.0.1"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+libc = "0.2.138"
