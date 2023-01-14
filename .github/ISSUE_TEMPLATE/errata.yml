@@ -1,0 +1,41 @@
+name: Errata
+description: Report a typo or other error in the book.
+labels:
+  - errata
+  - unconfirmed
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an error!
+
+        Feel free to report content issues with any (print, ebook, or online) version of the book. Please first check if the issue still appears in the online version at https://marabos.nl/atomics/, as issues that you encounter in other versions might have already been fixed.
+
+        Errata in the print, pdf, and epub versions of the book and are tracked by O'Reilly on [their errata page](https://www.oreilly.com/catalog/errata.csp?isbn=9781098119447). Please report any formatting or other issues that only affect the versions published by O'Reilly there.
+
+        Fixes are immediately visible on https://marabos.nl/atomics/. Fixes will propagate to new printed, pdf, and epub copies with a delay.
+  - type: dropdown
+    id: version
+    attributes:
+      label: Type of error
+      options:
+        - Typo
+        - Language or grammar issue
+        - Formatting error
+        - Minor technical mistake
+        - Serious technical mistake
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Location of the error
+      description: Please include a link to the relevant section https://marabos.nl/atomics/
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Description of the error
+    validations:
+      required: true

@@ -1,0 +1,22 @@
+name: Accessibility issue
+description: Report an issue about the accessibility of the online book
+labels:
+  - accessibility
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you encounter any issues with the accessibility of the book on https://marabos.nl/atomics/, please let me know so I can improve it.
+
+        If you encounter any issues with any version published by O'Reilly, you can contact them at bookquestions@oreilly.com.
+  - type: textarea
+    id: where
+    attributes:
+      label: Where the issue appears
+      description: If this issue appears in a specific place, please include a link to the relevant section on https://marabos.nl/atomics/.
+  - type: textarea
+    id: issue
+    attributes:
+      label: Description of the issue
+    validations:
+      required: true

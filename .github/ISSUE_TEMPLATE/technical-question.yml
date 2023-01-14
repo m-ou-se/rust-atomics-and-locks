@@ -1,0 +1,20 @@
+name: Technical question
+description: Ask a technical question about the content of the book.
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feel free to use this to ask any technical questions about the book, but please note that I might not have time to answer all questions.
+  - type: textarea
+    id: about
+    attributes:
+      label: The content that the question is about
+      description: If possible, please include a link to the relevant section on https://marabos.nl/atomics/ or the relevant example in this repository.
+  - type: textarea
+    id: question
+    attributes:
+      label: The question
+    validations:
+      required: true
