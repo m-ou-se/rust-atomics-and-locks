@@ -111,5 +111,5 @@ The data structures from chapters 4, 5, 6, and 9 can be found in [src/](src/).
 You may use all code in this repository for any purpose.
 
 Attribution is appreciated, but not required.
-An attrubution usually includes the book title, author, publisher, and ISBN.
+An attribution usually includes the book title, author, publisher, and ISBN.
 For example: "_Rust Atomics and Locks_ by Mara Bos (O’Reilly). Copyright 2023 Mara Bos, 978-1-098-11944-7."
