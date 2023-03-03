@@ -17,6 +17,8 @@ pub struct MutexGuard<'a, T> {
     mutex: &'a Mutex<T>,
 }
 
+unsafe impl<T> Sync for MutexGuard<'_, T> where T: Sync {}
+
 impl<T> Deref for MutexGuard<'_, T> {
     type Target = T;
     fn deref(&self) -> &T {

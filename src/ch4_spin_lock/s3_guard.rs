@@ -14,6 +14,8 @@ pub struct Guard<'a, T> {
     lock: &'a SpinLock<T>,
 }
 
+unsafe impl<T> Sync for Guard<'_, T> where T: Sync {}
+
 impl<T> SpinLock<T> {
     pub const fn new(value: T) -> Self {
         Self {
