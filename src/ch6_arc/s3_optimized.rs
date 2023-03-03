@@ -74,7 +74,7 @@ impl<T> Arc<T> {
                 n = arc.data().alloc_ref_count.load(Relaxed);
                 continue;
             }
-            assert!(n < usize::MAX - 1);
+            assert!(n <= usize::MAX / 2);
             // Acquire synchronises with get_mut's release-store.
             if let Err(e) =
                 arc.data()
@@ -110,7 +110,7 @@ impl<T> Weak<T> {
             if n == 0 {
                 return None;
             }
-            assert!(n < usize::MAX);
+            assert!(n <= usize::MAX / 2);
             if let Err(e) =
                 self.data()
                     .data_ref_count

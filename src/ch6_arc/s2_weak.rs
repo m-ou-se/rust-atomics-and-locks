@@ -71,7 +71,7 @@ impl<T> Weak<T> {
             if n == 0 {
                 return None;
             }
-            assert!(n < usize::MAX);
+            assert!(n <= usize::MAX / 2);
             if let Err(e) =
                 self.data()
                     .data_ref_count
