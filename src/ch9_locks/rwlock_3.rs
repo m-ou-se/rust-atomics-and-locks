@@ -31,7 +31,7 @@ impl<T> RwLock<T> {
         let mut s = self.state.load(Relaxed);
         loop {
             if s % 2 == 0 { // Even.
-                assert!(s != u32::MAX - 2, "too many readers");
+                assert!(s < u32::MAX - 2, "too many readers");
                 match self.state.compare_exchange_weak(
                     s, s + 2, Acquire, Relaxed
                 ) {
