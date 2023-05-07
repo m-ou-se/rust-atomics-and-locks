@@ -42,7 +42,11 @@ impl<T> Channel<T> {
             panic!("no message available!");
         }
         // Safety: We've just checked (and reset) the ready flag.
-        unsafe { (*self.message.get()).assume_init_read() }
+        unsafe { 
+            let v = (*self.message.get()).assume_init_read();
+            self.in_use.store(false, Release);
+            v
+        }
     }
 }
 
