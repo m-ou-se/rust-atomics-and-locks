@@ -6,6 +6,7 @@ fn get_key() -> u64 {
     let key = KEY.load(Relaxed);
     if key == 0 {
         let new_key = generate_random_key();
+        debug_assert_ne!(new_key, 0);
         match KEY.compare_exchange(0, new_key, Relaxed, Relaxed) {
             Ok(_) => new_key,
             Err(k) => k,
